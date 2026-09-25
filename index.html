@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Manikanta</title>
-<style>
-body{background:#1a0b2e;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;font-family:Arial;color:white}
-.card{background:#241042;padding:25px;border-radius:15px;width:320px;text-align:center;border:2px solid #a855f7}
-input{width:90%;padding:12px;margin:8px;border-radius:8px;border:0}
-button{width:95%;padding:12px;background:#a855f7;color:white;border:0;border-radius:8px;font-weight:bold;margin-top:10px}
-img{width:80px;height:80px;border-radius:50%;border:3px solid #a855f7}
-</style>
-</head>
-<body>
+<html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Manikanta</title>
+<style>body{background:#1a0b2e;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0;font-family:Arial;color:white}
+.card{background:#241042;padding:25px;border-radius:20px;width:320px;text-align:center;border:2px solid #a855f7}
+img{width:90px;height:90px;border-radius:50%;border:3px solid #a855f7;object-fit:cover}
+input{width:90%;padding:12px;margin:8px;border-radius:10px;border:0}
+button{width:95%;padding:12px;background:#a855f7;color:white;border:0;border-radius:10px;font-weight:bold;margin-top:10px}
+</style></head><body>
 <div class="card">
 <img src="https://github.com/kanitimounika390-beep.png">
-<h2>Manikanta</h2>
-<p style="color:#a78bfa">Login to Continue</p>
+<h2>Manikanta Cars</h2>
+<p style="color:#a78bfa">Login to View Blog</p>
 <input id="e" placeholder="Email"><br>
 <input id="p" type="password" placeholder="Password"><br>
-<button onclick="if(e.value!=''){alert('Welcome Manikanta!');location.href='https://kanitimounika390-beep.blogspot.com/'}else{alert('Email kottu ra!')}">LOGIN</button>
-</div>
-</body>
-</html>
+<button onclick="
+let e=document.getElementById('e').value;
+let p=document.getElementById('p').value;
+if(e=='mani@gmail.com' && p=='12345'){
+ location.href='https://manikantacarsmachinery.blogspot.com/?m=1';
+} else {
+ alert('Wrong! Email: mani@gmail.com Pass: 12345');
+}
+">LOGIN</button>
+<p style="font-size:11px;color:#a78bfa">Email: mani@gmail.com<br>Pass: 12345</p>
+</div></body></html>

@@ -6,19 +6,11 @@ input{width:90%;padding:12px;margin:8px;border-radius:10px;border:0}
 button{width:95%;padding:12px;background:#a855f7;color:white;border:0;border-radius:10px;font-weight:bold;margin-top:10px}
 </style></head><body>
 <div class="card">
-<img src="https://github.com/kanitimounika390-beep.png">
+<img src="https://avatars.githubusercontent.com/kanitimounika390-beep">
 <h2>Manikanta Cars</h2>
 <p style="color:#a78bfa">Login to View Blog</p>
 <input id="e" placeholder="Email"><br>
 <input id="p" type="password" placeholder="Password"><br>
-<button onclick="
-let e=document.getElementById('e').value;
-let p=document.getElementById('p').value;
-if(e=='mani@gmail.com' && p=='12345'){
- location.href='https://manikantacarsmachinery.blogspot.com/?m=1';
-} else {
- alert('Wrong! Email: mani@gmail.com Pass: 12345');
-}
-">LOGIN</button>
+<button onclick="if(document.getElementById('e').value=='mani@gmail.com' && document.getElementById('p').value=='12345'){location.href='https://manikantacarsmachinery.blogspot.com/?m=1'}else{alert('Wrong! Email: mani@gmail.com Pass: 12345')}">LOGIN</button>
 <p style="font-size:11px;color:#a78bfa">Email: mani@gmail.com<br>Pass: 12345</p>
 </div></body></html>

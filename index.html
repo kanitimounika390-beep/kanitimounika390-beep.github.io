@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+ 
+  <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MANIKANTA CARS & MACHINERY</title>
+<title>MANIKANTA CARS & MACHINERY | Yeleswaram</title>
 <style>
 body{background:#1a0a2e;color:white;font-family:Arial;margin:0;padding:10px}
 .card{border:2px solid #a855f7;border-radius:15px;padding:18px;margin:12px 0;text-align:center;background:#2a1050}
@@ -10,44 +11,84 @@ body{background:#1a0a2e;color:white;font-family:Arial;margin:0;padding:10px}
 .box{background:white;color:#222;padding:20px;border-radius:15px;margin:15px 0}
 h2{color:#ff6600;text-align:center}
 input{width:92%;padding:13px;border:2px solid #ff6600;border-radius:8px;margin:10px 0;font-size:16px}
-.btn{width:100%;padding:14px;border:none;border-radius:8px;font-weight:bold;color:white;margin:6px 0;font-size:16px}
+.btn{width:100%;padding:14px;border:none;border-radius:8px;font-weight:bold;color:white;margin:6px 0;font-size:16px;cursor:pointer}
 .o{background:#ff6600} .b{background:#007bff} .g{background:#25D366} .p{background:#6f42c1}
 </style>
 </head>
 <body>
-<div style="display:flex;justify-content:space-between;padding:15px"><h1 style="margin:0">📊 Dashboard</h1><button style="background:#a855f7;color:white;border:none;padding:8px 15px;border-radius:8px">Logout</button></div>
+
+<div style="display:flex;justify-content:space-between;padding:15px;align-items:center">
+<h1 style="margin:0">📊 Dashboard</h1>
+<button style="background:#a855f7;color:white;border:none;padding:8px 15px;border-radius:8px">Logout</button>
+</div>
+
 <div class="card"><div class="num">12</div>🚗 Total Cars</div>
 <div class="card"><div class="num">8</div>🚜 Machinery</div>
-<div class="card"><div class="num">10</div>✅ Available</div>
-<div class="card"><div class="num">25</div>📋 Bookings</div>
+<div class="card"><div class="num">10</div>✅ Available Now</div>
+<div class="card"><div class="num">25</div>📋 Total Bookings</div>
 
 <div class="box">
 <h2>🚜 MANIKANTA CARS & MACHINERY</h2>
-<p style="text-align:center"><b>Yeleswaram | 9493086666</b></p>
-<p>Yeleswaram lo No.1 - Cars, JCB, Tractor available. 5+ years exp. 24/7 Service. Takuva Rate.</p>
-<p style="background:#fff3e0;padding:10px;border-radius:8px;text-align:center"><b>📍 Main Road, Yeleswaram</b><br>📞 9493086666, 8519978199</p>
+<p style="text-align:center"><b>Yeleswaram | Kakinada District | Call: 9493086666</b></p>
+<p><b>About Us:</b> Manikanta Cars & Machinery is No.1 Service in Yeleswaram. 5+ Years Experience. We provide Cars, JCB, Tractor, Earth Movers at Low Price. 24/7 Service Available.</p>
+<h3>Our Services:</h3>
+<ul>
+<li>🚗 Car Rentals - Swift, Innova, Bolero for Marriage, Functions, Trips</li>
+<li>🚜 JCB & Excavator - House Foundation, Land Leveling, Tank Works</li>
+<li>🚛 Tractor Services - Farming, Goods Transport</li>
+<li>🏗️ 24/7 Emergency Service - Yeleswaram, Jaggampeta, Prathipadu, Tuni</li>
+</ul>
+<p style="background:#fff3e0;padding:10px;border-radius:8px;text-align:center"><b>Address:</b> Main Road, Yeleswaram, East Godavari, AP - 533429<br><b>Call:</b> 9493086666, 8519978199</p>
 </div>
 
 <div class="box">
-<h2>💰 Booking + Location</h2>
-<input type="number" id="km" placeholder="Enta KM? Ex: 50" oninput="calc()">
+<h2>💰 Instant Booking & Location Sharing</h2>
+<input type="number" id="km" placeholder="Enter How Many KM? Ex: 50" oninput="calc()">
 <div id="fare" style="text-align:center;font-size:24px;font-weight:bold;color:green;margin:10px">Fare: Rs 0</div>
-<button class="btn p" onclick="getLocation()">📍 Naa Location Share Cheyyi</button>
-<div id="loc" style="text-align:center;font-size:13px;background:#f3e8ff;color:#6f42c1;padding:8px;border-radius:5px">📍 Location not ready</div>
-<button class="btn o" onclick="pay(100)">Pay Rs 100 Advance</button>
-<button class="btn b" onclick="payFull()">Pay Full Amount</button>
-<button class="btn g" onclick="wa()">📲 WhatsApp Booking - Location tho</button>
+
+<button class="btn p" onclick="getLocation()">📍 Share My Location</button>
+<div id="loc" style="text-align:center;font-size:13px;background:#f3e8ff;color:#6f42c1;padding:8px;border-radius:5px">📍 Location Not Shared Yet - Click Above Button</div>
+
+<button class="btn o" onclick="pay(100)">Pay Rs 100 Advance - GPay / PhonePe</button>
+<button class="btn b" onclick="payFull()">Pay Full Amount Now</button>
+<button class="btn g" onclick="wa()">📲 Book on WhatsApp with Location</button>
 </div>
 
-<script>
-let total=0,custLoc="Location ledu",mapLink="";
-function calc(){let k=document.getElementById('km').value;total=k*50;document.getElementById('fare').innerText='Fare: Rs '+total;}
-function getLocation(){
- document.getElementById('loc').innerText="Location teeskuntunna...";
- if(navigator.geolocation){
-  navigator.geolocation.getCurrentPosition(function(p){
-   let lat=p.coords.latitude,lon=p.coords.longitude;
-   custLoc=lat+","+lon;mapLink="https://www.google.com/maps?q="+lat+","+lon;
-   document.getElementById('loc').innerHTML="✅ Ready: "+custLoc;
+<div style="text-align:center;padding:15px;font-size:12px;color:#aaa">© 2025 Manikanta Cars & Machinery | Yeleswaram</div>
 
-  
+<script>
+let total=0,custLoc="Location not shared",mapLink="";
+function calc(){
+  let k=document.getElementById('km').value;
+  total=k*50;
+  document.getElementById('fare').innerText='Fare: Rs '+total;
+}
+function getLocation(){
+  document.getElementById('loc').innerText="Getting location... Please wait...";
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(function(p){
+      let lat=p.coords.latitude,lon=p.coords.longitude;
+      custLoc=lat+", "+lon;
+      mapLink="https://www.google.com/maps?q="+lat+","+lon;
+      document.getElementById('loc').innerHTML="✅ Location Ready: "+custLoc+"<br><a href='"+mapLink+"' target='_blank'>View on Map</a>";
+      alert("Location Ready! Now click WhatsApp Booking!");
+    });
+  } else {
+    alert("Geolocation not supported by this browser");
+  }
+}
+function pay(a){
+  window.location.href="upi://pay?pa=9493086666@upi&pn=ManikantaCars&am="+a+"&cu=INR";
+}
+function payFull(){
+  if(total==0){alert('Please enter KM first!');return}
+  pay(total);
+}
+function wa(){
+  let k=document.getElementById('km').value||0;
+  let msg=`Hi Manikanta Cars,%0A%0A*NEW BOOKING*%0A%0A KM: ${k} KM%0A Fare: Rs ${total}%0A%0A*Customer Location:*%0A${custLoc}%0AMap: ${mapLink}%0A%0APlease send vehicle!`;
+  window.open("https://wa.me/919493086666?text="+msg);
+}
+</script>
+</body>
+</html>

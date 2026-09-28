@@ -1,9 +1,8 @@
- 
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MANIKANTA CARS & MACHINERY | Yeleswaram</title>
+<title>MANIKANTA CARS & MACHINERY</title>
 <style>
 body{background:#1a0a2e;color:white;font-family:Arial;margin:0;padding:10px}
 .card{border:2px solid #a855f7;border-radius:15px;padding:18px;margin:12px 0;text-align:center;background:#2a1050}
@@ -18,76 +17,62 @@ input{width:92%;padding:13px;border:2px solid #ff6600;border-radius:8px;margin:1
 <body>
 
 <div style="display:flex;justify-content:space-between;padding:15px;align-items:center">
-<h1 style="margin:0">📊 Dashboard</h1>
+<h1 style="margin:0">Dashboard</h1>
 <button style="background:#a855f7;color:white;border:none;padding:8px 15px;border-radius:8px">Logout</button>
 </div>
 
-<div class="card"><div class="num">12</div>🚗 Total Cars</div>
-<div class="card"><div class="num">8</div>🚜 Machinery</div>
-<div class="card"><div class="num">10</div>✅ Available Now</div>
-<div class="card"><div class="num">25</div>📋 Total Bookings</div>
+<div class="card"><div class="num">12</div>Total Cars</div>
+<div class="card"><div class="num">8</div>Construction Machinery</div>
+<div class="card"><div class="num">10</div>Available Now</div>
+<div class="card"><div class="num">25</div>Total Bookings</div>
 
 <div class="box">
-<h2>🚜 MANIKANTA CARS & MACHINERY</h2>
-<p style="text-align:center"><b>Yeleswaram | Kakinada District | Call: 9493086666</b></p>
-<p><b>About Us:</b> Manikanta Cars & Machinery is No.1 Service in Yeleswaram. 5+ Years Experience. We provide Cars, JCB, Tractor, Earth Movers at Low Price. 24/7 Service Available.</p>
+<h2>MANIKANTA CARS & MACHINERY</h2>
+<p style="text-align:center;font-weight:bold">Yeleswaram | Kakinada District | Phone: 9493086666</p>
+<p><b>About Us:</b> We are the Number One Vehicle and Machinery Service Provider in Yeleswaram. With over 5 years of experience, we provide Cars, JCB, Tractors and Earth Movers at the lowest price with fast and reliable service. We are available 24 hours.</p>
 <h3>Our Services:</h3>
 <ul>
-<li>🚗 Car Rentals - Swift, Innova, Bolero for Marriage, Functions, Trips</li>
-<li>🚜 JCB & Excavator - House Foundation, Land Leveling, Tank Works</li>
-<li>🚛 Tractor Services - Farming, Goods Transport</li>
-<li>🏗️ 24/7 Emergency Service - Yeleswaram, Jaggampeta, Prathipadu, Tuni</li>
+<li>Car Rental - Swift, Innova, Bolero for Wedding, Family Functions and Long Trips</li>
+<li>JCB and Excavator - For House Foundation, Land Leveling and Construction Work</li>
+<li>Tractor Service - For Agriculture and Goods Transportation</li>
+<li>24/7 Service Available in Yeleswaram, Jaggampeta, Prathipadu and Tuni</li>
 </ul>
-<p style="background:#fff3e0;padding:10px;border-radius:8px;text-align:center"><b>Address:</b> Main Road, Yeleswaram, East Godavari, AP - 533429<br><b>Call:</b> 9493086666, 8519978199</p>
+<p style="background:#fff3e0;padding:12px;border-radius:8px;text-align:center"><b>Address:</b> Main Road, Yeleswaram, Andhra Pradesh - 533429<br><b>Phone:</b> 9493086666, 8519978199</p>
 </div>
 
 <div class="box">
-<h2>💰 Instant Booking & Location Sharing</h2>
-<input type="number" id="km" placeholder="Enter How Many KM? Ex: 50" oninput="calc()">
-<div id="fare" style="text-align:center;font-size:24px;font-weight:bold;color:green;margin:10px">Fare: Rs 0</div>
-
-<button class="btn p" onclick="getLocation()">📍 Share My Location</button>
-<div id="loc" style="text-align:center;font-size:13px;background:#f3e8ff;color:#6f42c1;padding:8px;border-radius:5px">📍 Location Not Shared Yet - Click Above Button</div>
-
-<button class="btn o" onclick="pay(100)">Pay Rs 100 Advance - GPay / PhonePe</button>
+<h2>Instant Booking and Location Sharing</h2>
+<input type="number" id="km" placeholder="Enter Distance in KM - Example: 50" oninput="calc()">
+<div id="fare" style="text-align:center;font-size:26px;font-weight:bold;color:green;margin:12px 0">Fare: Rs 0</div>
+<button class="btn p" onclick="getLocation()">Share My Current Location</button>
+<div id="loc" style="text-align:center;font-size:13px;background:#f3e8ff;color:#6f42c1;padding:8px;border-radius:6px;margin:5px 0">Location Not Shared Yet - Please Click Above Button</div>
+<button class="btn o" onclick="pay(100)">Pay Rs 100 Advance - Google Pay / PhonePe</button>
 <button class="btn b" onclick="payFull()">Pay Full Amount Now</button>
-<button class="btn g" onclick="wa()">📲 Book on WhatsApp with Location</button>
+<button class="btn g" onclick="wa()">Book Now on WhatsApp with Location</button>
 </div>
 
-<div style="text-align:center;padding:15px;font-size:12px;color:#aaa">© 2025 Manikanta Cars & Machinery | Yeleswaram</div>
+<div style="text-align:center;padding:15px;font-size:12px;color:#aaa">Copyright 2025 Manikanta Cars & Machinery, Yeleswaram</div>
 
 <script>
-let total=0,custLoc="Location not shared",mapLink="";
-function calc(){
-  let k=document.getElementById('km').value;
-  total=k*50;
-  document.getElementById('fare').innerText='Fare: Rs '+total;
-}
+let total=0,custLoc="Location not shared yet",mapLink="";
+function calc(){let k=document.getElementById('km').value;total=k*50;document.getElementById('fare').innerText='Fare: Rs '+total;}
 function getLocation(){
-  document.getElementById('loc').innerText="Getting location... Please wait...";
-  if(navigator.geolocation){
-    navigator.geolocation.getCurrentPosition(function(p){
-      let lat=p.coords.latitude,lon=p.coords.longitude;
-      custLoc=lat+", "+lon;
-      mapLink="https://www.google.com/maps?q="+lat+","+lon;
-      document.getElementById('loc').innerHTML="✅ Location Ready: "+custLoc+"<br><a href='"+mapLink+"' target='_blank'>View on Map</a>";
-      alert("Location Ready! Now click WhatsApp Booking!");
-    });
-  } else {
-    alert("Geolocation not supported by this browser");
-  }
+ document.getElementById('loc').innerText="Fetching location... Please wait...";
+ if(navigator.geolocation){
+  navigator.geolocation.getCurrentPosition(function(p){
+   let lat=p.coords.latitude,lon=p.coords.longitude;
+   custLoc=lat+", "+lon;mapLink="https://www.google.com/maps?q="+lat+","+lon;
+   document.getElementById('loc').innerHTML="Location Ready: "+custLoc+"<br><a href='"+mapLink+"' target='_blank'>View Location on Map</a>";
+   alert("Location Captured Successfully!");
+  });
+ } else {alert("Location not supported");}
 }
-function pay(a){
-  window.location.href="upi://pay?pa=9493086666@upi&pn=ManikantaCars&am="+a+"&cu=INR";
-}
-function payFull(){
-  if(total==0){alert('Please enter KM first!');return}
-  pay(total);
-}
+function pay(a){window.location.href="upi://pay?pa=9493086666@upi&pn=ManikantaCars&am="+a+"&cu=INR";}
+function payFull(){if(total==0){alert('Please enter distance in KM first!');return}pay(total);}
 function wa(){
-  let k=document.getElementById('km').value||0;
-  let msg=`Hi Manikanta Cars,%0A%0A*NEW BOOKING*%0A%0A KM: ${k} KM%0A Fare: Rs ${total}%0A%0A*Customer Location:*%0A${custLoc}%0AMap: ${mapLink}%0A%0APlease send vehicle!`;
-  window.open("https://wa.me/919493086666?text="+msg);
+ let k=document.getElementById('km').value||0;
+ let msg=`Hello Manikanta Cars,%0A%0ANEW BOOKING REQUEST%0A%0ADistance: ${k} KM%0AFare: Rs ${total}%0A%0ACustomer Location: ${custLoc}%0AMap Link: ${mapLink}%0A%0APlease send the vehicle. Thank you!`;
+ window.open("https://wa.me/919493086666?text="+msg);
 }
 </script>
 </body>

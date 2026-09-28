@@ -1,57 +1,80 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MANIKANTA CARS & MACHINERY | Yeleswaram</title>
+<title>MANIKANTA CARS & MACHINERY | Yeleswaram No.1</title>
 <style>
-body{font-family:Arial;background:#f5f5f5;margin:0;padding:10px}
-.card{background:white;padding:20px;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.2);max-width:450px;margin:auto}
+body{background:#1a0a2e;color:white;font-family:Arial;margin:0;padding:10px}
+.header{display:flex;justify-content:space-between;padding:15px}
+.card{border:2px solid #a855f7;border-radius:15px;padding:18px;margin:12px 0;text-align:center;background:#2a1050}
+.num{font-size:38px;color:#c084fc;font-weight:bold}
+.box{background:white;color:#222;padding:20px;border-radius:15px;margin:15px 0}
 h2{color:#ff6600;text-align:center}
-input{width:90%;padding:12px;margin:10px 0;border:2px solid #ff6600;border-radius:8px;font-size:16px}
-.btn{width:100%;padding:14px;margin:8px 0;border:none;border-radius:8px;font-size:17px;font-weight:bold;color:white;cursor:pointer}
-.orange{background:#ff6600} .blue{background:#007bff} .green{background:#25D366}
-.fare{font-size:22px;font-weight:bold;color:green;text-align:center;margin:15px}
+input{width:92%;padding:13px;border:2px solid #ff6600;border-radius:8px;margin:10px 0;font-size:16px}
+.btn{width:100%;padding:14px;border:none;border-radius:8px;font-weight:bold;color:white;margin:6px 0;font-size:16px}
+.o{background:#ff6600} .b{background:#007bff} .g{background:#25D366}
+li{margin:8px 0;line-height:1.5}
 </style>
 </head>
 <body>
-<div class="card">
-<h2>🚜 MANIKANTA SERVICES 🚜</h2>
-<p style="text-align:center">Yeleswaram | 9493086666 | 8519978199</p>
-<img src="https://manikantacarsmachinery.blogspot.com/poster.jpg" style="width:100%;border-radius:10px" alt="Manikanta Cars">
 
-<label>Enta KM vellali?</label>
-<input type="number" id="km" placeholder="Ex: 50" oninput="calc()">
-<div class="fare" id="fare">Fare: Rs 0</div>
-
-<button class="btn orange" onclick="pay(100)">Pay Rs 100 Advance - GPay/PhonePe</button>
-<button class="btn blue" onclick="payFull()">Pay Full Amount</button>
-<button class="btn green" onclick="whatsapp()">WhatsApp lo Book Cheyyi</button>
-
-<p style="font-size:13px;text-align:center;margin-top:15px">✅ JCB | Tractor | Car Services Available</p>
+<div class="header">
+<div><h1 style="margin:0">📊 Dashboard</h1><small>Welcome to Manikanta Cars & Machinery</small></div>
+<button style="background:#a855f7;color:white;border:none;padding:10px 18px;border-radius:10px">Logout</button>
 </div>
+
+<div class="card"><div class="num">12</div>🚗 Total Cars</div>
+<div class="card"><div class="num">8</div>🚜 Machinery - JCB, Tractor</div>
+<div class="card"><div class="num">10</div>✅ Available Now</div>
+<div class="card"><div class="num">25</div>📋 Total Bookings</div>
+
+<div class="box">
+<h2>🚜 MANIKANTA CARS & MACHINERY</h2>
+<p style="text-align:center;font-weight:bold">Yeleswaram | Kakinada District | 9493086666</p>
+
+<h3>🙏 About Us:</h3>
+<p>Manikanta Cars & Machinery - Yeleswaram lo No.1 Service. 5+ years experience. Mana daggara anni rakala Cars, JCB, Tractor, Earth Movers available. Takuva rate lo, fast service. 24/7 Available.</p>
+
+<h3>🔧 Maa Services:</h3>
+<ul>
+<li>🚗 <b>Car Rentals</b> - Swift, Innova, Bolero - Marriage, Functions, Trips ki</li>
+<li>🚜 <b>JCB & Excavator</b> - House Foundation, Land Leveling, Tank Works</li>
+<li>🚛 <b>Tractor Services</b> - Farming, Goods Transport, Field Works</li>
+<li>🏗️ <b>Earth Movers</b> - Road Works, Building Construction ki</li>
+<li>⛟ <b>24/7 Emergency Service</b> - Yeleswaram, Jaggampeta, Prathipadu, Tuni varaku</li>
+</ul>
+
+<h3>⭐ Enduku Manalni Choose Chesukovali?</h3>
+<ul>
+<li>✅ Takuva Rate - 1 KM ki Rs 50 nundi start</li>
+<li>✅ Experienced Drivers - Safe Driving</li>
+<li>✅ On-Time Service - Time ki vastam</li>
+<li>✅ Yeleswaram Local - Mee urike manollam</li>
+</ul>
+
+<p style="text-align:center;background:#fff3e0;padding:10px;border-radius:8px"><b>📍 Address:</b> Main Road, Yeleswaram, East Godavari, AP - 533429<br><b>📞 Call:</b> 9493086666, 8519978199</p>
+</div>
+
+<div class="box">
+<h2>💰 Instant Booking & Payment</h2>
+<input type="number" id="km" placeholder="Enta KM? Ex: 50 KM" oninput="calc()">
+<div id="fare" style="text-align:center;font-size:24px;font-weight:bold;color:green;margin:12px">Fare: Rs 0</div>
+<button class="btn o" onclick="pay(100)">Pay Rs 100 Advance - GPay/PhonePe</button>
+<button class="btn b" onclick="payFull()">Pay Full Amount Now</button>
+<button class="btn g" onclick="wa()">WhatsApp lo Book Cheyyi - 9493086666</button>
+</div>
+
+<div style="text-align:center;padding:15px;font-size:12px;color:#aaa">© 2025 Manikanta Cars & Machinery | Yeleswaram<br>Designed for our Customers</div>
 
 <script>
 let total=0;
-function calc(){
- let km=document.getElementById('km').value;
- total=km*50; // 1KM = Rs 50 - nuvvu marchukovachu
- document.getElementById('fare').innerText='Fare: Rs '+total;
-}
-function pay(amt){
- let upi="9493086666@upi"; // NEE UPI ID IKKADA PETTU
- window.location.href="upi://pay?pa="+upi+"&pn=Manikanta&am="+amt+"&cu=INR";
-}
-function payFull(){
- if(total==0){alert('KM enter cheyyi ra!');return}
- pay(total);
-}
-function whatsapp(){
- let km=document.getElementById('km').value||0;
- let msg=`Hi Manikanta Anna, Naaku ${km} KM ki Service kavali. Fare Rs ${total}. Yeleswaram.`;
- window.open("https://wa.me/919493086666?text="+encodeURIComponent(msg));
-}
+function calc(){let k=document.getElementById('km').value;total=k*50;document.getElementById('fare').innerText='Fare: Rs '+total;}
+function pay(a){window.location.href="upi://pay?pa=9493086666@upi&pn=ManikantaCars&am="+a+"&cu=INR";}
+function payFull(){if(total==0){alert('KM enter cheyyi ra!');return}pay(total);}
+function wa(){let k=document.getElementById('km').value||0;window.open("https://wa.me/919493086666?text=Hi Manikanta Anna, Nenu Yeleswaram nundi. Naaku "+k+" KM ki JCB/Car kavali. Fare Rs "+total+". Please book cheyyandi.");}
 </script>
 </body>
 </html>
-  
   

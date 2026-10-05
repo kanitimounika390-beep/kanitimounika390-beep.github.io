@@ -1,72 +1,32 @@
-
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mouni & Chinna Surprise</title>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&family=Baloo+2:wght@800&family=Pacifico&display=swap" rel="stylesheet">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mouni & Chinna - Surprise</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Baloo+2:wght@700;800&family=Pacifico&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Fredoka',sans-serif;background:#fff0f5;overflow-x:hidden}
-.screen{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;position:relative;background:radial-gradient(circle at 30% 20%,#ffd6e7,#e8ddff,#d6f0ff,#fff4d6)}
-.teddies{position:relative;width:100%;max-width:600px;height:250px;margin-top:20px}
-.teddy{font-size:110px;position:absolute;transition:1.2s cubic-bezier(0.68,-0.55,0.27,1.55)}
-#tf{left:-150px;top:20px} #tf.enter{left:15%} 
-#tm{right:-150px;top:20px} #tm.enter{right:15%}
-.label{position:absolute;bottom:-30px;left:50%;transform:translateX(-50%);font-family:'Baloo 2';font-size:22px;font-weight:800;opacity:0;transition:0.6s}
+body{font-family:'Fredoka',sans-serif;background:#1a0a2e;min-height:100vh;overflow-x:hidden}
+.screen{width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;position:relative;transition:0.8s}
+#screen1{background:radial-gradient(circle at 50% 30%,#3d1a5e,#1a0a2e);color:white;text-align:center}
+#screen2{background:radial-gradient(circle at 30% 20%,#ffd6e7 0%,#e8ddff 35%,#d6f0ff 70%,#fff4d6 100%);display:none;color:#4a3a6b}
+.card{background:rgba(255,255,255,0.08);backdrop-filter:blur(15px);border:1px solid rgba(255,255,255,0.15);padding:40px 30px;border-radius:30px;max-width:400px;width:100%;box-shadow:0 20px 50px rgba(0,0,0,0.4)}
+.heart-big{font-size:60px;animation:beat 1.2s infinite}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+h1{font-family:'Baloo 2';font-size:28px;margin:15px 0 10px}
+.sub{opacity:0.8;font-size:15px;margin-bottom:20px;line-height:1.5}
+.btn{border:none;padding:14px 28px;border-radius:30px;font-family:'Baloo 2';font-size:16px;font-weight:700;cursor:pointer;transition:0.3s}
+.btn-light{background:white;color:#3d1a5e;box-shadow:0 8px 20px rgba(255,255,255,0.2)}
+.btn-pink{background:linear-gradient(90deg,#ff8fab,#ff5a7f);color:white;box-shadow:0 8px 20px rgba(255,90,127,0.4)}
+.btn:hover{transform:scale(1.05)}
+.teddies{position:relative;width:100%;max-width:600px;height:220px;margin:10px 0}
+.teddy{font-size:100px;position:absolute;transition:1.2s cubic-bezier(0.68,-0.55,0.27,1.55)}
+#tf{left:-150px;top:10px}#tf.enter{left:12%}
+#tm{right:-150px;top:10px}#tm.enter{right:12%}
+.label{position:absolute;bottom:-28px;left:50%;transform:translateX(-50%);font-family:'Baloo 2';font-size:20px;font-weight:800;opacity:0;transition:0.6s;white-space:nowrap}
 .label.show{opacity:1}
-.heart{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%) scale(0);font-size:80px;transition:0.8s}
-.heart.show{transform:translate(-50%,-50%) scale(1);animation:pulse 1s infinite}
-@keyframes pulse{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.2)}}
-.gift{margin-top:90px;text-align:center;opacity:0;transition:1s}
-.gift.show{opacity:1}
-.gbox{font-size:90px;animation:bounce 1.5s infinite;cursor:pointer}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.btn{background:linear-gradient(90deg,#ff8fab,#ff5a7f);color:white;border:none;padding:12px 28px;border-radius:30px;font-weight:700;font-size:17px;margin-top:12px;cursor:pointer;box-shadow:0 8px 20px rgba(255,90,127,0.4)}
-.msg{font-size:18px;background:white;padding:16px 20px;border-radius:22px;margin:10px 0;box-shadow:0 8px 20px rgba(0,0,0,0.06);opacity:0;transform:translateY(20px);transition:0.6s;text-align:center;max-width:550px}
-.msg.show{opacity:1;transform:translateY(0)}
-#conf{position:fixed;inset:0;pointer-events:none;z-index:10;display:none}
-.videos{display:none;max-width:800px;width:100%;margin-top:25px;text-align:center}
-.video-card{background:white;padding:10px;border-radius:18px;box-shadow:0 10px 25px rgba(0,0,0,0.08);width:340px;margin:10px;display:inline-block}
-.video-card video{width:100%;border-radius:12px}
-</style></head><body>
-<canvas id="conf"></canvas>
-<div class="screen">
-<div style="font-family:'Pacifico';color:#c76b8a;font-size:20px" id="topText">Loading surprise...</div>
-<div class="teddies">
-<div class="teddy" id="tf">🧸<div class="label" id="lf" style="color:#ff6b9d">Mouni 🎀</div></div>
-<div class="heart" id="hc">💖</div>
-<div class="teddy" id="tm">🧸<div class="label" id="lm" style="color:#5b8def">Chinna 💙</div></div>
-</div>
-<div id="sub" style="font-family:'Pacifico';color:#c76b8a;font-size:20px;opacity:0;transition:1s;margin-top:80px">Someone has a little surprise for you… ✨</div>
-<div class="gift" id="gift"><div class="gbox" id="gbox">🎁</div><button class="btn" id="openBtn">Open it, Chinna ❤️</button></div>
-<div id="msgs" style="display:none;margin-top:20px">
-<div class="msg" id="m1">Hey Chinna… 🥺 You are my favorite teddy in the whole world!</div>
-<div class="msg" id="m2">Every moment with you feels like a cute cartoon episode 💕</div>
-<div class="msg" id="m3">You make my days brighter, my laughs louder 🫶</div>
-<div class="msg" id="m4" style="background:linear-gradient(135deg,#ffe4ec,#f3e5ff);font-weight:700">I love you more than all teddy bears! 🧸💖</div>
-<div class="msg" id="m5" style="font-family:'Pacifico';font-size:24px;color:#ff5a7f;background:none;box-shadow:none">One more surprise… 👉👈💌</div>
-</div>
-<div class="videos" id="vsec">
-<h2 style="font-family:'Baloo 2';color:#4a3a6b">For You, My Chinna 💝</h2>
-<div class="video-card"><video controls><source src="video1.mp4"></video><h4 style="color:#ff6b9d;margin-top:8px">Our Memory 1 🎀</h4></div>
-<div class="video-card"><video controls><source src="video2.mp4"></video><h4 style="color:#5b8def;margin-top:8px">Our Memory 2 💙</h4></div>
-<p style="margin-top:20px;font-family:'Pacifico';color:#c76b8a">Always yours,<br><b style="font-family:'Baloo 2';font-size:26px">Mouni 🎀</b></p>
-</div>
-</div>
-<script>
-setTimeout(()=>{document.getElementById('tf').classList.add('enter')},300);
-setTimeout(()=>{document.getElementById('lf').classList.add('show')},1300);
-setTimeout(()=>{document.getElementById('tm').classList.add('enter')},800);
-setTimeout(()=>{document.getElementById('lm').classList.add('show')},2000);
-setTimeout(()=>{document.getElementById('hc').classList.add('show')},2400);
-setTimeout(()=>{document.getElementById('sub').style.opacity=1;document.getElementById('topText').innerText='Love Surprise 💖'},2800);
-setTimeout(()=>{document.getElementById('gift').classList.add('show')},3600);
-const canvas=document.getElementById('conf'),ctx=canvas.getContext('2d');
-function resize(){canvas.width=innerWidth;canvas.height=innerHeight}resize();onresize=resize;
-let parts=[];
-function confetti(){canvas.style.display='block';parts=[];for(let i=0;i<120;i++)parts.push({x:innerWidth/2+(Math.random()-0.5)*200,y:innerHeight/2,vx:(Math.random()-0.5)*10,vy:-Math.random()*10-2,rot:Math.random()*360,vr:(Math.random()-0.5)*8,color:['#ff8fab','#b68cff','#7dd3ff','#ffdf8a'][Math.floor(Math.random()*4)],size:8+Math.random()*10,life:1});anim()}
-function anim(){ctx.clearRect(0,0,canvas.width,canvas.height);let alive=false;parts.forEach(p=>{if(p.life<=0)return;alive=true;p.x+=p.vx;p.y+=p.vy;p.vy+=0.2;p.rot+=p.vr;p.life-=0.008;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);ctx.globalAlpha=p.life;ctx.font=p.size+'px serif';ctx.fillText('💖',0,0);ctx.restore()});if(alive)requestAnimationFrame(anim);else canvas.style.display='none'}
-document.getElementById('openBtn').onclick=()=>{
-document.getElementById('gbox').textContent='💝';confetti();
-setTimeout(()=>{document.getElementById('msgs').style.display='block';let ids=['m1','m2','m3','m4','m5'];ids.forEach((id,i)=>{setTimeout(()=>{document.getElementById(id).classList.add('show');if(id==='m5'){setTimeout(()=>{document.getElementById('vsec').style.display='block';document.getElementById('vsec').scrollIntoView({behavior:'smooth'});confetti()},1000)}},i*1200)})},500)
-}
-</script></body></html>
+.heart-center{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%) scale(0);font-size:75px;transition:0.8s}
+.heart-center.show{transform:translate(-50%,-50%) scale(1);animation:heartPulse 1s infinite}
+@keyframes heartPulse{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.25)}}
+.gift-area{margin-top:70

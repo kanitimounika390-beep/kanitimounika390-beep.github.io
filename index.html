@@ -1,98 +1,50 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mouni & Chinna</title>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A Little Surprise for Sir ❤️</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Baloo 2',sans-serif;background:#1a0a2e}
-.page{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center}
-#page1{background:#2a114d;color:white}
-.card{background:rgba(255,255,255,0.1);padding:35px;border-radius:25px;max-width:380px;width:100%}
-#page2{background:radial-gradient(circle,#ffd6e7,#e8ddff,#d6f0ff);display:none;color:#4a3a6b}
-.teddy-row{position:relative;width:100%;max-width:500px;height:180px;margin:20px 0}
-.t{font-size:90px;position:absolute;transition:1.2s}
-#t1{left:-100px}#t1.go{left:10%}
-#t2{right:-100px}#t2.go{right:10%}
-.lab{font-size:18px;position:absolute;bottom:-25px;left:50%;transform:translateX(-50%);opacity:0;transition:1s}
-.lab.ok{opacity:1}
-#heart{font-size:70px;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(0);transition:0.8s}
-#heart.ok{transform:translate(-50%,-50%) scale(1)}
-.gift{margin-top:80px;opacity:0;transition:1s}
-.gift.ok{opacity:1}
-.bounce{font-size:80px;animation:b 1.2s infinite}
-@keyframes b{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-.btn{border:none;padding:13px 26px;border-radius:30px;font-size:16px;font-weight:700;cursor:pointer;margin-top:12px}
-.btn1{background:white;color:#2a114d}
-.btn2{background:linear-gradient(90deg,#ff8fab,#ff5a7f);color:white}
-.msg{background:white;padding:14px 18px;border-radius:18px;margin:10px 0;max-width:520px;box-shadow:0 6px 15px rgba(0,0,0,0.1);opacity:0;transform:translateY(15px);transition:0.6s}
-.msg.ok{opacity:1;transform:translateY(0)}
-.vid{background:white;padding:10px;border-radius:15px;width:320px;margin:10px;display:inline-block}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:radial-gradient(circle at top,#5d2b72,#170b25 65%);color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}.box{width:min(420px,100%);background:rgba(35,16,55,.94);border:1px solid rgba(255,255,255,.15);border-radius:28px;padding:28px 22px;box-shadow:0 20px 60px rgba(0,0,0,.45);text-align:center}.heart{font-size:44px;animation:pulse 1.5s infinite}@keyframes pulse{50%{transform:scale(1.12)}}h1{margin:8px 0 10px;font-size:27px}p{line-height:1.55;color:#eadff1}.question{font-size:21px;font-weight:700;margin:25px 0 18px}.options{display:grid;gap:11px}.option,.start,.next{border:0;border-radius:15px;padding:14px;font-size:16px;font-weight:700;cursor:pointer;background:#fff;color:#281232}.option:active,.start:active,.next:active{transform:scale(.98)}.option.correct{background:#b9f6cf}.option.wrong{background:#ffd0d0}.hidden{display:none}.small{font-size:13px;color:#cdbbd4}.progress{height:6px;background:#4a3157;border-radius:9px;margin:18px 0}.bar{height:100%;width:0;background:#ff9bcf;border-radius:9px;transition:.3s}.video-wrap video{width:100%;border-radius:18px;display:block;background:#000}.message{font-size:20px;font-weight:700;margin:18px 0;color:#ffd3eb}.final{font-size:15px;color:#eadff1;margin-bottom:18px}
 </style>
 </head>
 <body>
-
-<div class="page" id="page1">
-<div class="card">
-<div style="font-size:55px">❤️</div>
-<h2>Hey Sirrrrr... 🥺</h2>
-<p style="margin:12px 0;opacity:0.9">Ready for a little surprise from Mouni?<br>Click start...</p>
-<button class="btn btn1" onclick="go()">Start the Surprise ✨</button>
-</div>
-</div>
-
-<div class="page" id="page2">
-<div style="font-family:Pacifico;color:#c76b8a;font-size:22px">Love Surprise 💖</div>
-<div class="teddy-row">
-<div class="t" id="t1">🧸<div class="lab" id="l1" style="color:#ff6b9d">Mouni 🎀</div></div>
-<div id="heart">💖</div>
-<div class="t" id="t2">🧸<div class="lab" id="l2" style="color:#5b8def">Chinna 💙</div></div>
-</div>
-<div id="txt" style="font-family:Pacifico;color:#c76b8a;opacity:0;transition:1s">Someone has a little surprise for you… ✨</div>
-<div class="gift" id="gift">
-<div class="bounce" id="box">🎁</div>
-<button class="btn btn2" onclick="openGift()">Open it, Chinna ❤️</button>
-</div>
-
-<div id="allMsgs" style="display:none;flex-direction:column;align-items:center;margin-top:20px">
-<div class="msg" id="m1">Hey Chinna… 🥺 You are my favorite teddy!</div>
-<div class="msg" id="m2">Every moment with you is like a cute cartoon 💕</div>
-<div class="msg" id="m3">You make my heart fuller 🫶</div>
-<div class="msg" id="m4" style="background:#ffe4ec;font-weight:700">I love you more than all teddy bears! 🧸💖</div>
-<div class="msg" id="m5" style="background:none;box-shadow:none;font-family:Pacifico;color:#ff5a7f;font-size:22px">One more surprise… 👉👈</div>
-<div id="vids" style="display:none;margin-top:15px">
-<div class="vid"><video controls width="100%"><source src="video1.mp4"></video><p style="color:#ff6b9d">Our Memory 1 🎀</p></div>
-<div class="vid"><video controls width="100%"><source src="video2.mp4"></video><p style="color:#5b8def">Our Memory 2 💙</p></div>
-<p style="font-family:Pacifico;margin-top:15px;color:#c76b8a">Always yours,<br><b>Mouni 🎀</b></p>
-</div>
-</div>
-</div>
-
+<main class="box">
+<section id="intro">
+<div class="heart">❤️</div><h1>Hey Sirrrrr… 🥺</h1>
+<p>Ready for a little surprise from Mouni?</p>
+<p class="small">Answer these little questions first…</p>
+<button class="start" onclick="startQuiz()">Start the Surprise ✨</button>
+</section>
+<section id="quiz" class="hidden">
+<div class="progress"><div id="bar" class="bar"></div></div>
+<div id="qcount" class="small"></div><div id="question" class="question"></div><div id="options" class="options"></div>
+<p id="feedback" class="small"></p>
+</section>
+<section id="final" class="hidden">
+<div class="heart">🎁</div><h1>One Last Surprise…</h1>
+<p class="message">You reached the end, Sir ❤️</p>
+<p class="final">This is from me on <b>my birthday</b> — because I wanted to make this day special for you too. 🥺</p>
+<button class="next" onclick="showVideo()">Open My Surprise 🎬❤️</button>
+</section>
+<section id="video" class="hidden">
+<h1>For You, Sir ❤️</h1>
+<div class="video-wrap"><video id="vid" controls playsinline preload="metadata"><source src="birthday_husband_video.mp4" type="video/mp4"></video></div>
+<p class="message">Happy Birthday to me… but this little surprise is for you. 🥺❤️</p>
+<p class="small">— Mouni</p>
+</section>
+</main>
 <script>
-function go(){
-document.getElementById('page1').style.display='none';
-document.getElementById('page2').style.display='flex';
-setTimeout(()=>document.getElementById('t1').classList.add('go'),200);
-setTimeout(()=>document.getElementById('l1').classList.add('ok'),1200);
-setTimeout(()=>document.getElementById('t2').classList.add('go'),600);
-setTimeout(()=>document.getElementById('l2').classList.add('ok'),1600);
-setTimeout(()=>document.getElementById('heart').classList.add('ok'),2000);
-setTimeout(()=>document.getElementById('txt').style.opacity=1,2400);
-setTimeout(()=>document.getElementById('gift').classList.add('ok'),3000);
-}
-function openGift(){
-document.getElementById('box').innerText='💝';
-document.getElementById('allMsgs').style.display='flex';
-let ids=['m1','m2','m3','m4','m5'];
-ids.forEach((id,i)=>{
-setTimeout(()=>{
-document.getElementById(id).classList.add('ok');
-if(id=='m5')setTimeout(()=>document.getElementById('vids').style.display='block',800);
-},i*1000);
-});
-}
+const qs=[
+{q:'Where did our story begin?',o:['College canteen 💚','Classroom','Bus stop','Online'],a:0},
+{q:'On which date did we first have that special canteen moment?',o:['August 20','August 24 💚','August 26','September 3'],a:1},
+{q:'When did you propose to me?',o:['August 24','August 25','August 26 💚','September 3'],a:2},
+{q:'When did I accept and our journey officially start?',o:['August 24','August 26','September 1','September 3 💚'],a:3}
+];
+let i=0;
+function startQuiz(){document.getElementById('intro').classList.add('hidden');document.getElementById('quiz').classList.remove('hidden');render()}
+function render(){document.getElementById('qcount').textContent=`Question ${i+1} of ${qs.length}`;document.getElementById('question').textContent=qs[i].q;document.getElementById('bar').style.width=((i)/qs.length*100)+'%';document.getElementById('feedback').textContent='';let el=document.getElementById('options');el.innerHTML='';qs[i].o.forEach((x,n)=>{let b=document.createElement('button');b.className='option';b.textContent=x;b.onclick=()=>answer(n,b);el.appendChild(b)})}
+function answer(n,b){let all=[...document.querySelectorAll('.option')];all.forEach(x=>x.disabled=true);if(n===qs[i].a){b.classList.add('correct');document.getElementById('feedback').textContent='Correct! 🥺❤️';setTimeout(()=>{i++;if(i<qs.length)render();else{document.getElementById('quiz').classList.add('hidden');document.getElementById('final').classList.remove('hidden');document.getElementById('bar').style.width='100%'}},650)}else{b.classList.add('wrong');document.getElementById('feedback').textContent='Awww… try again 🥺';setTimeout(()=>{all.forEach(x=>x.disabled=false);b.classList.remove('wrong')},650)}}
+function showVideo(){document.getElementById('final').classList.add('hidden');document.getElementById('video').classList.remove('hidden');let v=document.getElementById('vid');v.play().catch(()=>{});}
 </script>
-</body>
-</html>
+</body></html>
